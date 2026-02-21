@@ -3,33 +3,35 @@ interface Props {
   currentPath?: string;
 }
 
-const { currentPath = '' } = Astro.props;
+const { currentPath = "" } = Astro.props;
 
 const navItems = [
-  { href: '/', label: 'HOME' },
-  { href: '/archive', label: 'ARCHIVE' },
-  { href: '/links', label: 'FRIENDS' },
-  { href: '/about', label: 'ABOUT' },
+  { href: "/", label: "HOME" },
+  { href: "/archive", label: "ARCHIVE" },
+  { href: "https://lindex.gtbcamp.cn", label: "LINDEX" },
+  { href: "/about", label: "ABOUT" },
 ];
 ---
 
 <header class="site-header">
   <div class="site-branding">
-    <a class="site-title">Tufte Style Blog</a>
-    <p class="site-description">A modern implementation with Astro and Tailwind CSS 探索清晰、优雅的信息呈现方式</p>
+    <a class="site-title" href="/">GTBs Linguistics Blog</a>
+    <!-- <p class="site-description">副标题</p> -->
   </div>
   <nav class="site-nav">
     <ul>
-      {navItems.map(item => (
-        <li>
-          <a
-            href={item.href}
-            class:list={[{ active: currentPath === item.href }]}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[{ active: currentPath === item.href }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>
@@ -48,10 +50,11 @@ const navItems = [
     font-size: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    text-decoration: none;
   }
 
   .site-title:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   .site-description {

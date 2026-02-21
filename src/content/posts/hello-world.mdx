@@ -7,13 +7,14 @@ math: true
 tags: ["测试", "tufte"]
 ---
 
-import Blockquote from '../../components/Blockquote.astro';
-import Cite from '../../components/Cite.astro';
-import Figure from '../../components/Figure.astro';
-import MarginNote from '../../components/MarginNote.astro';
-import MarginFigure from '../../components/MarginFigure.astro';
-import Ruby from '../../components/Ruby.astro';
-import Sidenote from '../../components/Sidenote.astro';
+import Blockquote from "../../components/Blockquote.astro";
+import Cite from "../../components/Cite.astro";
+import Figure from "../../components/Figure.astro";
+import MarginNote from "../../components/MarginNote.astro";
+import MarginFigure from "../../components/MarginFigure.astro";
+import Ruby from "../../components/Ruby.astro";
+import Sidenote from "../../components/Sidenote.astro";
+import Fullwidth from "../../components/Fullwidth.astro";
 
 这是博客的第一篇文章。本文将展示 Tufte 风格博客的基本排版效果。
 
@@ -28,7 +29,8 @@ Good typography is invisible.<Sidenote id="typography">好的排版是无形的�
 ## 引用
 
 <Blockquote author="Shawn O'Hare" source="Math is Fun" epigraph>
-    This is an example of an epigraph with some math $ \mathbb N \subseteq \mathbb R $ to start the beginning of a section.
+  This is an example of an epigraph with some math $ \mathbb N \subseteq \mathbb
+  R $ to start the beginning of a section.
 </Blockquote>
 
 这个博客支持上面这种特殊的“epigraph”引用。当需要为每个大章节点缀一首诗，那么这种样式最合适不过。
@@ -50,8 +52,8 @@ Good typography is invisible.<Sidenote id="typography">好的排版是无形的�
     This is a blockquote with two paragraphs, that employs the theme's `blockquote` shortcode. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
     Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-</Blockquote>
 
+</Blockquote>
 
 ## 代码示例
 
@@ -77,7 +79,7 @@ and $\sqrt{-1} = i $
 and $ a_2 = 3 $.
 
 Currently, certain $\LaTeX$ environments need to be escaped so that
-the markdown processor does not override Katex.  Currently, display
+the markdown processor does not override Katex. Currently, display
 environments should be enclosed in `<p>` tags and blank lines.
 For instance:
 
@@ -108,6 +110,7 @@ $$
 ```
 
 ## Code 代码块
+
 As an example of some inline code: `go test -v -short`.
 And this is some block-code:
 
@@ -128,6 +131,7 @@ func main() {
 ```
 
 Here's an example without line numbers.
+
 ```go {hl_lines=["2-5"],linenostart=199}
 package main
 
@@ -145,6 +149,7 @@ func main() {
 ```
 
 ## Figure 图表
+
 Below we have an example of a regular width figure.
 
 <Figure
@@ -155,40 +160,42 @@ Below we have an example of a regular width figure.
 />
 
 <MarginFigure
-    id="mf1"
-    src="https://edwardtufte.github.io/tufte-css/img/rhino.png"
-    alt="示意图"
-    caption="这是一个在边注区域显示的小图"
+  id="mf1"
+  src="https://edwardtufte.github.io/tufte-css/img/rhino.png"
+  alt="示意图"
+  caption="这是一个在边注区域显示的小图"
 />
 
 But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate.
 
 <Figure
-    src="https://edwardtufte.github.io/tufte-css/img/napoleons-march.png"
-    alt="图片描述 The image title"
-    caption="这是图片的说明文字 This is the image caption"
-    credit="摄影：张三，2024 by Image attribution"
-    fullwidth
+  src="https://edwardtufte.github.io/tufte-css/img/napoleons-march.png"
+  alt="图片描述 The image title"
+  caption="这是图片的说明文字 This is the image caption"
+  credit="摄影：张三，2024 by Image attribution"
+  fullwidth
 />
 
 ## Table 表格
 
 | Tables   |      Are      |  Cool |
-|:----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
+| :------- | :-----------: | ----: |
+| col 1 is | left-aligned  | $1600 |
+| col 2 is |   centered    |   $12 |
 | col 3 is | right-aligned |    $1 |
 
 ## <Ruby mark="<ruby/>">Ruby</Ruby> Annotation 文字注音
 
 Another very important feature is a `<Ruby/>` mark. It supports not only latin but also CJK character sets.
 
-<Ruby mark="Pronunciation">The Word</Ruby> `<Ruby mark="Pronunciation">The Word</Ruby>`
+<Ruby mark="Pronunciation">The Word</Ruby> `
+<Ruby mark="Pronunciation">The Word</Ruby>`
 
-<Ruby mark="zhōng wén">中文</Ruby>可以注音，日本語の文字に<Ruby mark="ふりがな">振り仮名</Ruby>をつけることも可能である。
-
+<Ruby mark="zhōng wén">中文</Ruby>可以注音，日本語の文字に
+<Ruby mark="ふりがな">振り仮名</Ruby>をつけることも可能である。
 
 ## A Story About Cats
+
 Climb a tree, wait for a fireman jump to fireman then scratch his face sleep on dog bed, force dog to sleep on floor cat snacks, and eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap climb a tree, wait for a fireman jump to fireman then scratch his face put toy mouse in food bowl run out of litter box at full speed . See owner, run in terror chase mice, so thinking longingly about tuna brine for eat a plant, kill a hand for wake up human for food at 4am. Human is washing you why halp oh the horror flee scratch hiss bite scratch the furniture and rub face on owner. Loves cheeseburgers see owner, run in terror chew on cable. Thug cat ignore the squirrels, you'll never catch them anyway. Eat a plant, kill a hand find empty spot in cupboard and sleep all day so hide head under blanket so no one can see yet love to play with owner's hair tie rub face on everything i like big cats and i can not lie. Wake up human for food at 4am stare at the wall, play with food and get confused by dust yet then cats take over the world scamper. Inspect anything brought into the house get video posted to internet for chasing red dot. Brown cats with pink ears chew foot spit up on light gray carpet instead of adjacent linoleum. I am the best wake up human for food at 4am, meow spread kitty litter all over house, for meow. Knock dish off table head butt cant eat out of my own dish jump off balcony, onto stranger's head, chase ball of string scream at teh bath but climb leg, so unwrap toilet paper but destroy couch. Climb a tree, wait for a fireman jump to fireman then scratch his face. Leave hair everywhere swat turds around the house eat grass, throw it back up, and eat grass, throw it back up. Chase after silly colored fish toys around the house.
 
 ### We really like cats.

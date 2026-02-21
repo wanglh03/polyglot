@@ -13,21 +13,27 @@ const { author, source, url, epigraph = false } = Astro.props;
   <div class="quote-content">
     <slot />
   </div>
-  {(author || source) && (
-    <footer class="quote-footer">
-      {author && <span class="author">{author}</span>}
-      {source && (
-        <>
-          {author && <span class="separator">, </span>}
-          {url ? (
-            <cite><a href={url} target="_blank" rel="noopener noreferrer">{source}</a></cite>
-          ) : (
-            <cite>{source}</cite>
-          )}
-        </>
-      )}
-    </footer>
-  )}
+  {
+    (author || source) && (
+      <footer class="quote-footer">
+        {author && <span class="author">{author}</span>}
+        {source && (
+          <>
+            {author && <span class="separator">, </span>}
+            {url ? (
+              <cite>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {source}
+                </a>
+              </cite>
+            ) : (
+              <cite>{source}</cite>
+            )}
+          </>
+        )}
+      </footer>
+    )
+  }
 </blockquote>
 
 <style>
