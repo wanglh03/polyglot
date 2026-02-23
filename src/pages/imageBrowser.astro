@@ -1,0 +1,159 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="图像浏览器" wide>
+  <h1 id="bookTitle"></h1>
+  <p id="yearAuthor"></p>
+  <div id="viewer"></div>
+
+  <div class="controls">
+    <button id="prevBtn">← 上一页</button>
+    <div>
+      第
+      <input id="pageInput" type="number" min="1" value="1" />
+      页 / 共 <span id="pageTotal">NA</span> 页
+    </div>
+    <button id="nextBtn">下一页 →</button>
+  </div>
+
+  <div id="desc"></div>
+</BaseLayout>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"
+  is:inline></script>
+
+<script is:inline>
+  const srcUrl = "https://cethiunn-1305783649.cos.accelerate.myqcloud.com/";
+  const params = new URLSearchParams(window.location.search);
+  let file = params.get("file") || "1";
+  let page = parseInt(params.get("page") ?? "1");
+
+  fetch("/data/fileMap.json")
+    .then((res) => res.json())
+    .then((fileMap) => {
+      // ✅ 如果 file 不存在
+      if (!fileMap[file]) {
+        alert("内容不存在");
+        history.back(); // 返回上一页
+        return; // 终止后续执行
+      }
+
+      const config = fileMap[file];
+
+      document.getElementById("bookTitle").innerText = config.title;
+      let separator = config.year && config.author ? "·" : "";
+      document.getElementById("yearAuthor").innerText =
+        config.year + separator + config.author;
+      document.getElementById("desc").innerText = config.desc;
+
+      const viewer = OpenSeadragon({
+        id: "viewer",
+        prefixUrl:
+          "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/images/",
+        showNavigator: true,
+        maxZoomPixelRatio: 2.5,
+        minZoomLevel: 0.5,
+        visibilityRatio: 1,
+        constrainDuringPan: true,
+      });
+
+      function pad(num, size) {
+        return num.toString().padStart(size, "0");
+      }
+
+      function loadImage(p) {
+        viewer.open({
+          type: "image",
+          url:
+            srcUrl + config.path + "/" + pad(p, config.pad) + "." + config.ext,
+        });
+      }
+
+      // 页码边界保护
+      page = Math.min(Math.max(page, 1), config.max);
+
+      loadImage(page);
+
+      document.getElementById("pageInput").value = page;
+      document.getElementById("pageTotal").innerText = config.max;
+
+      function updatePage(newPage) {
+        page = Math.min(Math.max(newPage, 1), config.max);
+        loadImage(page);
+        document.getElementById("pageInput").value = page;
+
+        history.replaceState(
+          null,
+          "",
+          window.location.pathname + "?file=" + file + "&page=" + page,
+        );
+      }
+
+      document.getElementById("prevBtn").onclick = () => {
+        if (page > 1) updatePage(page - 1);
+      };
+
+      document.getElementById("nextBtn").onclick = () => {
+        if (page < config.max) updatePage(page + 1);
+      };
+
+      document.getElementById("pageInput").onchange = (e) => {
+        const value = parseInt(e.target.value);
+        if (!isNaN(value)) {
+          updatePage(value);
+        }
+      };
+    })
+    .catch(() => {
+      alert("数据加载失败");
+      history.back();
+    });
+</script>
+
+<style>
+  #viewer {
+    width: 100%;
+    height: 75vh;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  #yearAuthor {
+    text-align: center;
+    color: #666;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  #prevBtn {
+    background-color: #4a90e2;
+  }
+  #nextBtn {
+    background-color: #27ae60;
+  }
+  button:hover {
+    opacity: 0.85;
+  }
+  input {
+    width: 60px;
+    text-align: center;
+    padding: 6px;
+  }
+</style>

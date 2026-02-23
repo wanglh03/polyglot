@@ -1,18 +1,21 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
-const posts = await getCollection('posts', ({ data }) => !data.draft);
+const posts = await getCollection("posts", ({ data }) => !data.draft);
 
 // Group posts by year
 const postsByYear = posts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .reduce((acc, post) => {
-    const year = post.data.date.getFullYear();
-    if (!acc[year]) acc[year] = [];
-    acc[year].push(post);
-    return acc;
-  }, {} as Record<number, typeof posts>);
+  .reduce(
+    (acc, post) => {
+      const year = post.data.date.getFullYear();
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(post);
+      return acc;
+    },
+    {} as Record<number, typeof posts>,
+  );
 
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 ---
@@ -21,21 +24,26 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
   <h1>归档</h1>
   <p class="archive-count">共 {posts.length} 篇文章</p>
 
-  {years.map(year => (
-    <section class="archive-year">
-      <h2>{year}</h2>
-      <ul class="archive-list">
-        {postsByYear[Number(year)].map(post => (
-          <li>
-            <time datetime={post.data.date.toISOString()}>
-              {post.data.date.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' })}
-            </time>
-            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  ))}
+  {
+    years.map((year) => (
+      <section class="archive-year">
+        <h2>{year}</h2>
+        <ul class="archive-list">
+          {postsByYear[Number(year)].map((post) => (
+            <li>
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString("zh-CN", {
+                  month: "2-digit",
+                  day: "2-digit",
+                })}
+              </time>
+              <a href={`/${post.slug}`}>{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
 </BaseLayout>
 
 <style>

@@ -1,0 +1,44 @@
+{
+  "1": {
+    "title": "切三",
+    "author": "",
+    "year": "",
+    "desc": "",
+    "path": "切三",
+    "max": 30,
+    "pad": 2,
+    "ext": "jpg"
+  },
+  "2": {
+    "title": "王一",
+    "author": "",
+    "year": "",
+    "desc": "",
+    "path": "王一",
+    "max": 46,
+    "pad": 4,
+    "ext": "jpg"
+  }
+  ,
+  "3": {
+    "title": "王三·蘇教版（真圖）",
+    "author": "",
+    "year": "",
+    "desc": "",
+    "path": "王三/蘇教版",
+    "max": 101,
+    "pad": 3,
+    "ext": "png"
+  }
+  ,
+  "4": {
+    "title": "王三·龍宇純校箋本（臨摹）",
+    "author": "",
+    "year": "",
+    "desc": "",
+    "path": "王三/龍宇純",
+    "max": 93,
+    "pad": 2,
+    "ext": "png"
+  }
+}
