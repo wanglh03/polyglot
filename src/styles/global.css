@@ -127,14 +127,14 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: "KaiXinSongA";
   src: url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongA.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 @font-face {
   font-family: "KaiXinSongB";
