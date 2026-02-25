@@ -137,11 +137,14 @@
 
   /* Font families */
   /* 正文: ET Book → EB Garamond (fallback for extended Latin) → 霞鹜新致宋 */
-  --font-serif: "ET Book", "EB Garamond", "LXGWNeoZhiSong", serif;
+  --font-serif:
+    "Times New Roman", "ET Book", "EB Garamond", "LXGWNeoZhiSong", serif;
   /* 斜体: ET Book Italic → EB Garamond Italic → 霞鹜心致宋 */
-  --font-serif-italic: "ET Book", "EB Garamond", "LXGWHeartSerifCL", serif;
+  --font-serif-italic:
+    "Times New Roman", "ET Book", "EB Garamond", "LXGWHeartSerifCL", serif;
   /* 引用: ET Book → EB Garamond → 霞鹜文楷 */
-  --font-serif-quote: "ET Book", "EB Garamond", "LXGWWenKai", serif;
+  --font-serif-quote:
+    "Times New Roman", "ET Book", "EB Garamond", "LXGWWenKai", "KaiTi", serif;
   --font-sans:
     -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans SC",
     sans-serif;
@@ -153,7 +156,6 @@ html {
   color: var(--color-tufte-text);
   font-size: 22px;
   line-height: 1;
-  font-synthesis: none;
 }
 
 body {
@@ -168,6 +170,7 @@ i,
 .italic {
   font-family: var(--font-serif-italic);
   font-style: italic;
+  font-synthesis: none; /* 禁止浏览器合成斜体 */
 }
 
 /* CJK typography optimizations */
@@ -202,14 +205,14 @@ h3 {
 }
 
 h1 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 2.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   /* font-style: italic; */
   font-size: 1.5rem;
   margin-top: 2rem;
@@ -217,7 +220,7 @@ h2 {
 }
 
 h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   /* font-style: italic; */
   font-size: 1.25rem;
   margin-top: 1.5rem;
@@ -236,6 +239,7 @@ blockquote {
   border: none;
   font-style: italic;
   quotes: none;
+  font-synthesis: none; /* 禁止浏览器合成斜体 */
 }
 
 blockquote::before,

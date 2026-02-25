@@ -1,0 +1,83 @@
+---
+import { IDS_LAYOUTS } from '../lib/ids-renderer';
+import '../styles/ids-renderer.css';
+
+interface Props {
+  content?: string;
+  size?: number;  // 单位为 px，默认 1em（会继承父元素字体大小）
+}
+
+let { content = '', size = 1 } = Astro.props;  // 1 表示 1em
+
+// 如果没有 content 属性，尝试从插槽获取内容
+if (!content) {
+  const html = await Astro.slots.render('default');
+  content = html.trim();
+}
+
+function next(nodes: any[]): any {
+  let node = nodes.shift();
+  if (node === undefined) {
+    node = {
+      type: 'text',
+      classList: ['ids', 'empty'],
+      text: '',
+      style: undefined,
+    };
+  }
+  return node;
+}
+
+function parseIds(tokens: string[]): any[] {
+  function parse(tokens: string[]): any[] {
+    const head = tokens.shift();
+    if (head === undefined) return [];
+    
+    let nodes = parse(tokens);
+    const layout = IDS_LAYOUTS[head as keyof typeof IDS_LAYOUTS];
+
+    if (layout) {
+      const node: any = {
+        type: 'container',
+        classList: ['ids'],
+        children: [],
+      };
+
+      for (let i = 0; i < layout.parts; i++) {
+        const child = next(nodes);
+        child.style = layout.style[i];
+        node.children.push(child);
+      }
+
+      return [node, ...nodes];
+    } else {
+      const node: any = {
+        type: 'text',
+        classList: ['ids'],
+        text: head,
+      };
+      return [node, ...nodes];
+    }
+  }
+
+  return parse(tokens);
+}
+
+function renderNode(node: any, sizeVal: number = 1): string {
+  const styleStr = node.style
+    ? `style="--ids-size: ${sizeVal}em; position: absolute; transform: ${node.style.transform}; top: ${node.style.top}; left: ${node.style.left};"`
+    : `style="--ids-size: ${sizeVal}em"`;
+
+  if (node.type === 'text') {
+    return `<span class="${node.classList.join(' ')}" ${styleStr}>${node.text || ''}</span>`;
+  }
+
+  const childrenHtml = (node.children || []).map(n => renderNode(n, sizeVal)).join('');
+  return `<span class="${node.classList.join(' ')}" ${styleStr}>${childrenHtml}</span>`;
+}
+
+const tokens = Array.from(content.trim());
+const nodes = parseIds(tokens);
+const html = nodes.map(n => renderNode(n, size)).join('');
+---
+<Fragment set:html={html} />

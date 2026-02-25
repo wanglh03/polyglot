@@ -8,7 +8,10 @@
   ),
 )<frontmatter>
 
-#set text(font: "Georgia", size: 6pt)
+#set text(
+  font: ("Times New Roman", "SimSun"),
+  size: 6pt,
+)
 #set par(leading: 1em)
 #set page(width: auto, height: auto, margin: 0.5em)
 
@@ -16,6 +19,8 @@
 
 === How to insert an image
 
-To insert an image here, simply use the built-in `#image` function.<MarginNote>123</MarginNote>
+To insert an image here, simply use the built-in `#image` function.
 
-Note: The file is converted into SVG format. For more details, refer to the setting in `astro.config.mts`.
+<MarginNote>123</MarginNote>
+
+T1：隹隼準

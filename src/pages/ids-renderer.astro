@@ -1,0 +1,51 @@
+---
+import Ids from '../components/IdsRenderer.astro';
+import Layout from '../layouts/BaseLayout.astro';
+---
+
+<Layout title="IDS Kanji 组件演示">
+  <h1>IDS Kanji 组件演示</h1>
+
+  <h2>基本使用</h2>
+  
+  <h3>例子 1：带鸟的字</h3>
+  <Ids content="⿰鳥叴" />
+
+  <h3>例子 2：在段落中使用（1em）</h3>
+  这是一个复合字 <Ids content="⿰木火" /> 在句子中间。
+
+  <h3>例子 3：多个字符（1em）</h3>
+  <p>
+    <Ids content="⿱艹本" />
+    <Ids content="⿲金玉金" />
+    <Ids content="⿳亠口八" />
+  </p>
+
+  <h3>例子 4：嵌套 IDS 结构（1em）</h3>
+  <Ids content="⿰⿱艹本木" />
+
+  <h3>例子 5：更大的字（2em）</h3>
+  <Ids content="⿰鳥叴" size={2} />
+
+  <style>
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+  </style>
+</Layout>

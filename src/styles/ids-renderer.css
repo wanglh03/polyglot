@@ -1,0 +1,20 @@
+.ids-renderer-container {
+  display: inline-block;
+  --ids-size: 1em;
+  font-size: var(--ids-size);
+}
+
+.ids {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1.4;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  transform-origin: top left;
+  vertical-align: baseline;
+}
+
+.ids.empty {
+  background-color: rgba(255, 179, 179, 0.3);
+}
