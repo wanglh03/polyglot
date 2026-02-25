@@ -127,6 +127,24 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "KaiXinSongA";
+  src: url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongA.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KaiXinSongB";
+  src: url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongB.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @plugin "@tailwindcss/typography";
 
 /* Tufte Theme Configuration */
@@ -138,13 +156,13 @@
   /* Font families */
   /* 正文: ET Book → EB Garamond (fallback for extended Latin) → 霞鹜新致宋 */
   --font-serif:
-    "Times New Roman", "ET Book", "EB Garamond", "LXGWNeoZhiSong", serif;
+    "EB Garamond", "LXGWNeoZhiSong", "KaiXinSongA", "KaiXinSongB", serif;
   /* 斜体: ET Book Italic → EB Garamond Italic → 霞鹜心致宋 */
   --font-serif-italic:
-    "Times New Roman", "ET Book", "EB Garamond", "LXGWHeartSerifCL", serif;
+    "EB Garamond", "LXGWHeartSerifCL", "KaiXinSongA", "KaiXinSongB", serif;
   /* 引用: ET Book → EB Garamond → 霞鹜文楷 */
   --font-serif-quote:
-    "Times New Roman", "ET Book", "EB Garamond", "LXGWWenKai", "KaiTi", serif;
+    "EB Garamond", "LXGWWenKai", "KaiTi", "KaiXinSongA", "KaiXinSongB", serif;
   --font-sans:
     -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans SC",
     sans-serif;
