@@ -102,7 +102,7 @@
 
 /* 霞鹜新致宋 - 正文 CJK */
 @font-face {
-  font-family: "LXGWNeoZhiSong";
+  font-family: "LXGW Neo ZhiSong";
   src: url("/fonts/Lxgw/LxgwNeoZhiSong/LXGWNeoZhiSong.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -111,17 +111,27 @@
 
 /* 霞鹜文楷 - 引用 CJK */
 @font-face {
-  font-family: "LXGWWenKai";
-  src: url("/fonts/Lxgw/LxgwWenKai/LXGWWenKai-Regular.ttf") format("truetype");
+  font-family: "LXGW WenKai";
+  src:
+    local("LXGW WenKai"),
+    url("/fonts/Lxgw/LxgwWenKai/LXGWWenKai-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 /* 霞鹜心致宋 - 斜体 CJK */
-@font-face {
+/* @font-face {
   font-family: "LXGWHeartSerifCL";
   src: url("/fonts/Lxgw/LxgwHeartSerif/LXGWHeartSerifCL.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: "TH-Tshyn-ExtI";
+  src: url("/fonts/TH-Tshyn-ExtI.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -146,12 +156,17 @@
 
   /* Font families */
   /* 正文: ET Book → EB Garamond (fallback for extended Latin) → 霞鹜新致宋 */
-  --font-serif: "EB Garamond", "LXGWNeoZhiSong", "TH-Tshyn-P2", serif;
+  --font-serif:
+    "EB Garamond", "LXGW Neo ZhiSong", "SimSun", "SimSun-ExtB", "SimSun-ExtG",
+    "TH-Tshyn-P2", serif;
   /* 斜体: ET Book Italic → EB Garamond Italic → 霞鹜心致宋 */
-  --font-serif-italic: "EB Garamond", "LXGWHeartSerifCL", "TH-Tshyn-P2", serif;
+  --font-serif-italic:
+    "EB Garamond", "LXGW Neo ZhiSong", "SimSun", "SimSun-ExtB", "SimSun-ExtG",
+    "TH-Tshyn-P2", serif;
   /* 引用: ET Book → EB Garamond → 霞鹜文楷 */
   --font-serif-quote:
-    "EB Garamond", "LXGWWenKai", "KaiTi", "TH-Tshyn-P2", serif;
+    "EB Garamond", "LXGW WenKai", "KaiTi", "SimSun", "SimSun-ExtB",
+    "SimSun-ExtG", "TH-Tshyn-P2", serif;
   --font-sans:
     -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans SC",
     sans-serif;
