@@ -92,6 +92,11 @@ const RIGHT_WIDE = { transform: "scale(0.7, 1)", left: "0.33em" };
 const LEFT_NARROW = { transform: "scale(0.4, 1)" };
 const LEFT_NARROW_SHORT = { transform: "scale(0.4, 0.9)" };
 const BOTTOM_BIG = { transform: "scale(1, 0.7)", top: "0.35em" };
+const BOTTOM_INNER = {
+  transform: "scale(0.8, 0.7)",
+  top: "0.25em",
+  left: "0.05em",
+};
 const MID_WIDE = { transform: "scale(0.4, 1)", left: "0.33em" };
 
 export const IDS_PART_OVERRIDES = {
@@ -111,7 +116,7 @@ export const IDS_PART_OVERRIDES = {
   },
   "⿱": {
     艹: { second: BOTTOM_BIG },
-    宀: { second: BOTTOM_BIG },
+    宀: { second: BOTTOM_INNER },
   },
   "⿲": {
     扌: { second: MID_WIDE },

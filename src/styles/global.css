@@ -103,7 +103,9 @@
 /* 霞鹜新致宋 - 正文 CJK */
 @font-face {
   font-family: "LXGW Neo ZhiSong";
-  src: url("/fonts/Lxgw/LxgwNeoZhiSong/LXGWNeoZhiSong.ttf") format("truetype");
+  src:
+    local("LXGW Neo ZhiSong"),
+    url("/fonts/Lxgw/LxgwNeoZhiSong/LXGWNeoZhiSong.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -131,8 +133,10 @@
 
 @font-face {
   font-family: "KaiXinSongA";
-  src: url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongA.ttf")
-    format("truetype");
+  src:
+    local("KaiXinSongA"),
+    url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongA.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -140,8 +144,10 @@
 
 @font-face {
   font-family: "KaiXinSongB";
-  src: url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongB.ttf")
-    format("truetype");
+  src:
+    local("KaiXinSongB"),
+    url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongB.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -173,8 +179,10 @@
 
 @font-face {
   font-family: "TH-Tshyn-P2";
-  src: url("https://cdn.gtbro.vip/fonts/TH-Tshyn-5.0.0/TH-Tshyn-P2.ttf")
-    format("truetype");
+  src:
+    local("TH-Tshyn-P2"),
+    url("https://cdn.gtbro.vip/fonts/TH-Tshyn-5.0.0/TH-Tshyn-P2.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
