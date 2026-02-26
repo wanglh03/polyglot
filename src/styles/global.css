@@ -7,7 +7,7 @@
    ============================================ */
 
 /* ET Book Roman - Old Style Figures (正文) */
-/* @font-face {
+@font-face {
   font-family: "ET Book";
   src:
     url("/fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff")
@@ -17,10 +17,10 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 /* ET Book Display Italic - Old Style Figures (斜体) */
-/* @font-face {
+@font-face {
   font-family: "ET Book";
   src:
     url("/fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff")
@@ -30,10 +30,10 @@
   font-weight: normal;
   font-style: italic;
   font-display: swap;
-} */
+}
 
 /* ET Book Semi Bold - Old Style Figures (半粗体) */
-/* @font-face {
+@font-face {
   font-family: "ET Book";
   src:
     url("/fonts/et-book/et-book-semi-bold-old-style-figures/et-book-semi-bold-old-style-figures.woff")
@@ -43,10 +43,10 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 /* ET Book Bold - Line Figures (粗体) */
-/* @font-face {
+@font-face {
   font-family: "ET Book";
   src:
     url("/fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff")
@@ -56,10 +56,10 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 /* ET Book Roman - Line Figures (等高数字，用于表格等) */
-/* @font-face {
+@font-face {
   font-family: "ET Book Lining";
   src:
     url("/fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff")
@@ -69,7 +69,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 /* ============================================
    EB Garamond - Variable Fonts
@@ -77,24 +77,24 @@
    ============================================ */
 
 /* EB Garamond Variable - Regular */
-/* @font-face {
+@font-face {
   font-family: "EB Garamond";
   src: url("/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf")
     format("truetype-variations");
   font-weight: 400 800;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 /* EB Garamond Variable - Italic */
-/* @font-face {
+@font-face {
   font-family: "EB Garamond";
   src: url("/fonts/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf")
     format("truetype-variations");
   font-weight: 400 800;
   font-style: italic;
   font-display: swap;
-} */
+}
 
 /* ============================================
    霞鹜 (Lxgw) CJK Font Family
@@ -121,13 +121,31 @@
 }
 
 /* 霞鹜心致宋 - 斜体 CJK */
-/* @font-face {
+@font-face {
   font-family: "LXGWHeartSerifCL";
   src: url("/fonts/Lxgw/LxgwHeartSerif/LXGWHeartSerifCL.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} */
+}
+
+@font-face {
+  font-family: "KaiXinSongA";
+  src: url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongA.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KaiXinSongB";
+  src: url("https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongB.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "TH-Tshyn-ExtB";
@@ -171,18 +189,15 @@
   --color-tufte-text: #111;
 
   /* Font families */
-  /* 正文: ET Book → EB Garamond (fallback for extended Latin) → 霞鹜新致宋 */
   --font-serif:
-    "Garamond", "LXGW Neo ZhiSong", "SimSun", "TH-Tshyn-ExtB", "TH-Tshyn-ExtC",
-    "SimSun-ExtG", "TH-Tshyn-ExtI", "TH-Tshyn-P2", serif;
-  /* 斜体: ET Book Italic → EB Garamond Italic → 霞鹜心致宋 */
+    "EB Garamond", "LXGW Neo ZhiSong", "KaiXinSongA", "KaiXinSongB", "SimSun",
+    "SimSun-ExtB", "SimSun-ExtG", serif;
   --font-serif-italic:
-    "Garamond", "LXGW Neo ZhiSong", "SimSun", "TH-Tshyn-ExtB", "TH-Tshyn-ExtC",
-    "SimSun-ExtG", "TH-Tshyn-ExtI", "TH-Tshyn-P2", serif;
-  /* 引用: ET Book → EB Garamond → 霞鹜文楷 */
+    "EB Garamond", "LXGW Neo ZhiSong", "KaiXinSongA", "KaiXinSongB", "SimSun",
+    "SimSun-ExtB", "SimSun-ExtG", serif;
   --font-serif-quote:
-    "Garamond", "LXGW WenKai", "KaiTi", "SimSun", "TH-Tshyn-ExtB",
-    "TH-Tshyn-ExtC", "SimSun-ExtG", "TH-Tshyn-ExtI", "TH-Tshyn-P2", serif;
+    "EB Garamond", "LXGW WenKai", "KaiTi", "KaiXinSongA", "KaiXinSongB",
+    "SimSun", "SimSun-ExtB", "SimSun-ExtG", serif;
   --font-sans:
     -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans SC",
     sans-serif;

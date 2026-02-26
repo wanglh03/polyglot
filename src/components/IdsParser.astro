@@ -1,6 +1,6 @@
 ---
-import { IDS_LAYOUTS } from '../lib/ids-renderer';
-import '../styles/ids-renderer.css';
+import { IDS_LAYOUTS, IDS_PART_OVERRIDES } from '../lib/ids-parser';
+import '../styles/ids-parser.css';
 
 interface Props {
   content?: string;
@@ -43,9 +43,30 @@ function parseIds(tokens: string[]): any[] {
         children: [],
       };
 
+      let firstPartText: string | null = null;
+
       for (let i = 0; i < layout.parts; i++) {
         const child = next(nodes);
-        child.style = layout.style[i];
+        let style = layout.style[i];
+
+        if (i === 0 && child.type === 'text') {
+          firstPartText = child.text ?? null;
+        }
+
+        if (firstPartText) {
+          const overridesByFirst = IDS_PART_OVERRIDES[head as keyof typeof IDS_PART_OVERRIDES];
+          const override = overridesByFirst && overridesByFirst[firstPartText as keyof typeof overridesByFirst];
+          if (override) {
+            if (i === 0 && override.first) {
+              style = { ...style, ...override.first };
+            }
+            if (i === 1 && override.second) {
+              style = { ...style, ...override.second };
+            }
+          }
+        }
+
+        child.style = style;
         node.children.push(child);
       }
 

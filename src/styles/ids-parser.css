@@ -1,4 +1,4 @@
-.ids-renderer-container {
+.ids-parser-container {
   display: inline-block;
   --ids-size: 1em;
   font-size: var(--ids-size);
