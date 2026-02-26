@@ -1,7 +1,7 @@
 ---
-title: "[TBC]汉语音韵史简介"
+title: "[TBC]汉语音韵"
 subtitle: ""
-date: 2026-02-21
+date: 2026-02-27
 description: 汉语
 math: true
 categories:
@@ -9,6 +9,7 @@ categories:
 tags:
   - 上古汉语
   - 中古汉语
+  - 音韵学
 ---
 
 import Blockquote from "../../components/Blockquote.astro";
@@ -28,64 +29,9 @@ import Fullwidth from "../../components/Fullwidth.astro";
 
 唐代王仁昫《刊谬补缺切韵》是目前尚存最早的《切韵》系韵书，目前存世的唯一全本为唐写本（或称宋濂跋本），通称“王三”。
 
-import Paper from "../table/qieyun.typ";
+import Qieyun from "../table/qieyun.typ";
 
-<Paper />
-
-<table>
-  <thead>
-    <tr>
-      <th>名稱</th>
-      <th>又稱</th>
-      <th>版本細分</th>
-      <th>來源</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>切三</td>
-      <td>S.2071</td>
-      <td>
-        <a href="/imageBrowser?file=1">切三</a>
-      </td>
-      <td>
-        <a href="https://idp.bl.uk/collection/7F4760132FFA4017ABBD62A5572DBDAF/?return=%2Fcollection%2F%3Fterm%3DS.2071">
-          IDP国际敦煌项目
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>王一</td>
-      <td>P.2011</td>
-      <td>
-        <a href="/imageBrowser?file=2">王一</a>
-      </td>
-      <td>
-        <a href="https://gallica.bnf.fr/ark:/12148/btv1b52503710f">
-          Gallica(法国国家图书馆BnF之数字图书馆)
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">王三</td>
-      <td rowspan="2">宋跋本、全王</td>
-      <td>
-        <a href="/imageBrowser?file=3">蘇教版（真圖）</a>
-      </td>
-      <td>
-        <a href="https://book.douban.com/subject/27591818/">原書</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="/imageBrowser?file=4">龍宇純校箋本（臨摹）</a>
-      </td>
-      <td>
-        <a href="https://books.google.com.hk/books?id=mIrpygAACAAJ">原書</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<Qieyun />
 
 ### 《廣韻》書影
 
@@ -130,11 +76,11 @@ import Paper from "../table/qieyun.typ";
   </li>
   <li>
     静嘉堂：
-    <a href="/book-scan/广韵/静嘉堂/S015宋版.经部.广韵.大宋重修广韵.5卷.宋.陈彭年等奉敕重修.宋孝宗朝初期刊.5册.pdf">
+    <a href="/广韵/静嘉堂/S015宋版.经部.广韵.大宋重修广韵.5卷.宋.陈彭年等奉敕重修.宋孝宗朝初期刊.5册.pdf">
       S015.pdf
     </a>
     |
-    <a href="/book-scan/广韵/静嘉堂/S016宋版.经部.广韵.大宋重修广韵.5卷.宋.陈彭年等奉敕重修.宋宁宗朝刊.覆宋孝宗朝初期刊.5册.pdf">
+    <a href="/广韵/静嘉堂/S016宋版.经部.广韵.大宋重修广韵.5卷.宋.陈彭年等奉敕重修.宋宁宗朝刊.覆宋孝宗朝初期刊.5册.pdf">
       S016.pdf
     </a>
   </li>
@@ -144,3 +90,60 @@ import Paper from "../table/qieyun.typ";
 
 - [嘉吉本《指微韻鑑》](/imageBrowser?file=30)
 - [古逸叢書本](/imageBrowser?file=31)
+
+## 术语
+
+### 音节术语
+
+声母I=initial、介音M=medial、主元音V=main vowel、韵尾E=ending、声调T=tone。
+
+|   音节术语    | 音段组合 |
+| :-----------: | :------: |
+| **声**首onset |    IM    |
+|   节尾coda    |    E     |
+|   韵基rime    |    VE    |
+|   韵母final   |   MVE    |
+
+韵（rhyme）一般指VET或MVET。
+
+onset和rhyme（IMVE)的二分可能为IM+VE、I+MVE、IM+MVE，后二者更为常见。
+
+中古汉语的M=w, ɰ, j。
+
+## 韵图
+
+### 发音部位
+
+| 韵图中名称 |                       发音部位                       |
+| :--------: | :--------------------------------------------------: |
+|    唇音    |                      唇音labial                      |
+|    舌音    |     齿龈音alveolar和卷舌音retroflex（塞音stops）     |
+|    牙音    |                     软腭音velar                      |
+|    齿音    | 齿龈音alveolar和齿龈后音postalveolar（塞擦音和擦音） |
+|    喉音    |                    喉音laryngeal                     |
+
+| 韵图中名称 |           发音方法           |                                 英文                                 |
+| :--------: | :--------------------------: | :------------------------------------------------------------------: |
+|     清     | 清不送气塞音、塞擦音和清擦音 | voiceless unaspirated stops and affricates, and voiceless fricatives |
+|    次清    |      清送气塞音、塞擦音      |               voiceless aspirated stops and affricates               |
+|     浊     |    浊塞音、塞擦音和浊擦音    |          voiced stops and affricates, and voiced fricatives          |
+| 次浊/清浊  |       鼻音、边音、近音       |                    nasals, laterals, approximants                    |
+
+### 四列舌音
+
+| 韵图中名称 |     舌音     |   IPA   |
+| :--------: | :----------: | :-----: |
+|     清     | 清不送气塞音 |  t-/ʈ-  |
+|    次清    |  清送气塞音  | th-/ʈh- |
+|     浊     |    浊塞音    |  d-/ɖ-  |
+| 次浊/清浊  |     鼻音     |  n-/ɳ-  |
+
+### 五列齿音
+
+| 韵图中名称 |      齿音      |      IPA       |
+| :--------: | :------------: | :------------: |
+|     清     | 清不送气塞擦音 |  ts-/tʂ-/tɕ-   |
+|    次清    |  清送气塞擦音  | tsh-/tʂh-/tɕh- |
+|     浊     |    浊塞擦音    |  dz-/dʐ-/dʑ-   |
+|     清     |     清擦音     |    s-/ʂ-/ɕ     |
+|     浊     |     浊擦音     |    z-/ʐ-/ʑ-    |

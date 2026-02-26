@@ -3,7 +3,7 @@ interface Props {
   class?: string;
 }
 
-const { class: className = '' } = Astro.props;
+const { class: className = "" } = Astro.props;
 ---
 
 <div class:list={["fullwidth", className]}>
@@ -14,8 +14,8 @@ const { class: className = '' } = Astro.props;
   .fullwidth {
     max-width: none;
     clear: both;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    /* margin-top: 2.5rem; */
+    /* margin-bottom: 2.5rem; */
   }
 
   /* Clear any floats before fullwidth */
