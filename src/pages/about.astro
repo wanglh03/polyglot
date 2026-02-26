@@ -7,18 +7,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="about-content">
     <h2>关于本站</h2>
-    <p>本站是我的个人的语言学学习记录，内容不保证正确，会随时更新。</p>
+    本站是<a href="https://gtbro.vip">GTB</a>
+    的个人的语言学学习记录，内容不保证学术正确。
 
-    <h2>联系方式</h2>
-    <!-- <ul class="contact-list">
-      <li>Email: your-email@example.com</li>
-      <li>GitHub: <a href="https://github.com/">@username</a></li>
-    </ul> -->
-    <p>
-      This website is maintained by <a href="https://gtbro.vip"
-        >Great Thunder Brother</a
-      >.
-    </p>
+    <h2>须知</h2>
+
+    本站中文字体采用：
+    <ul>
+      <li>
+        <a href="https://github.com/lxgw/LxgwWenKai">Lxgw WenKai / 霞鹜文楷</a> v1.522-RC2
+        26/02/08，含扩展A区，<a href="/fonts/lxgw/LXGWWenKai-Regular.ttf"
+          >本站下载</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/lxgw/LxgwNeoZhiSong"
+          >LXGW Neo ZhiSong Plus / 霞鹜新致宋+</a
+        > v1.061 26/02/09，含扩展A区及其他区零星字，<a
+          href="/fonts/lxgw/LXGWNeoZhiSongPlus.ttf">本站下载</a
+        >
+      </li>
+      <li>
+        <a href="https://www.39017.com/zidian/bujian/KaiXinSong.php"
+          >KaiXinSong / 开心宋体</a
+        > v4.0 2024，含扩展A-I区，本站下载：<a
+          href="https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongA.ttf"
+          >开心宋体A</a
+        >（含扩展A区），
+        <a href="https://cdn.gtbro.vip/fonts/KaiXinSong/KaiXinSongB.ttf"
+          >开心宋体B</a
+        >（含扩展B-I区）
+      </li>
+    </ul>
+    字体文件较大，加载可能较慢，可在本地安装以上字体以获得更加体验。
+
+    <!-- <h2>联系方式</h2>
+    <ul class="
+          contact-list"
+        >
+          <li>Email: your-email@example.com</li>
+          <li>GitHub: <a href="https://github.com/">@username</a></li>
+        </a> -->
   </section>
 </BaseLayout>
 
@@ -42,5 +71,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .contact-list li {
     padding: 0.3rem 0;
+  }
+
+  ul {
+    padding-left: 2rem;
+    list-style-type: disc;
   }
 </style>
