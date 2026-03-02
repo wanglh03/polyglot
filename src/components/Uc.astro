@@ -1,0 +1,18 @@
+---
+interface Props {
+  val?: string;
+}
+
+const { val = "1" } = Astro.props;
+const parsedVal = Number(val);
+const squareCount = Number.isFinite(parsedVal)
+  ? Math.max(1, Math.floor(parsedVal))
+  : 1;
+const text = "□".repeat(squareCount);
+---
+
+<span
+  aria-label="缺字"
+  style="font-family: 'LXGW Neo ZhiSong Plus', 'KaiXinSongA','KaiXinSongB', 'SimSun', 'SimSun-ExtB', 'SimSun-ExtG', serif;"
+  >{text}</span
+>
