@@ -91,11 +91,12 @@ export const IDS_LAYOUTS = {
 const RIGHT_WIDE = { transform: "scale(0.7, 1)", left: "0.33em" };
 const LEFT_NARROW = { transform: "scale(0.4, 1)" };
 const LEFT_NARROW_SHORT = { transform: "scale(0.4, 0.9)" };
-const BOTTOM_BIG = { transform: "scale(1, 0.7)", top: "0.35em" };
+const TOP_NARROW = { transform: "scale(1, 0.8)", top: "-0.2em" };
+const BOTTOM_BIG = { transform: "scale(1, 0.7)", top: "0.28em" };
 const BOTTOM_INNER = {
   transform: "scale(0.8, 0.7)",
   top: "0.25em",
-  left: "0.05em",
+  left: "0.08em",
 };
 const MID_WIDE = { transform: "scale(0.4, 1)", left: "0.33em" };
 
@@ -111,12 +112,16 @@ export const IDS_PART_OVERRIDES = {
     女: { first: LEFT_NARROW, second: RIGHT_WIDE },
     言: { first: LEFT_NARROW, second: RIGHT_WIDE },
     爿: { first: LEFT_NARROW, second: RIGHT_WIDE },
+    禾: { first: LEFT_NARROW, second: RIGHT_WIDE },
     土: { first: LEFT_NARROW_SHORT, second: RIGHT_WIDE },
     山: { first: LEFT_NARROW_SHORT, second: RIGHT_WIDE },
   },
   "⿱": {
-    艹: { second: BOTTOM_BIG },
-    宀: { second: BOTTOM_INNER },
+    艹: { first: TOP_NARROW, second: BOTTOM_BIG },
+    宀: { first: TOP_NARROW, second: BOTTOM_INNER },
+  },
+  "⿳": {
+    艹: { first: TOP_NARROW },
   },
   "⿲": {
     扌: { second: MID_WIDE },
