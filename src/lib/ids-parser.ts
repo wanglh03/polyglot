@@ -91,7 +91,8 @@ export const IDS_LAYOUTS = {
 const RIGHT_WIDE = { transform: "scale(0.7, 1)", left: "0.33em" };
 const LEFT_NARROW = { transform: "scale(0.4, 1)" };
 const LEFT_NARROW_SHORT = { transform: "scale(0.4, 0.9)" };
-const TOP_NARROW = { transform: "scale(1, 0.8)", top: "-0.2em" };
+const TOP_NARROW = { transform: "scale(1, 0.7)", top: "-0.1em" };
+const TOP_NARROW_A = { transform: "scale(1, 0.3)", top: "0.1em" };
 const BOTTOM_BIG = { transform: "scale(1, 0.7)", top: "0.28em" };
 const BOTTOM_INNER = {
   transform: "scale(0.8, 0.7)",
@@ -117,11 +118,12 @@ export const IDS_PART_OVERRIDES = {
     山: { first: LEFT_NARROW_SHORT, second: RIGHT_WIDE },
   },
   "⿱": {
-    艹: { first: TOP_NARROW, second: BOTTOM_BIG },
+    艹: { first: TOP_NARROW_A, second: BOTTOM_BIG },
     宀: { first: TOP_NARROW, second: BOTTOM_INNER },
+    "⺈": { second: BOTTOM_BIG },
   },
   "⿳": {
-    艹: { first: TOP_NARROW },
+    艹: { first: TOP_NARROW_A },
   },
   "⿲": {
     扌: { second: MID_WIDE },
